@@ -3,8 +3,9 @@ MQL4で実行速度を計測したい時に使うモジュール。
 
 
 ## Install
-1. download Benchmark.mqh
-2. /MQL4/Include/配下に保存する
+1. Benchmark.mqhをダウンロード
+2. データフォルダを開き、/MQL4/Includes/mql4_modules/Benchmark/Benchmark.mqhとして保存
+
 
 ## Usage
 1. Benchmark.mqhを読み込む
