@@ -1,40 +1,38 @@
 # MQL4-Benchmark
-MQL4で実行速度を計測したい時に使うモジュール。
+Module for measuring execution speed.
 
 
 ## Install
-1. Benchmark.mqhをダウンロード
-2. データフォルダを開き、/MQL4/Includes/mql4_modules/Benchmark/Benchmark.mqhとして保存
+1. Download Benchmark.mqh
+2. Save the file to /MQL4/Includes/mql4_modules/Benchmark/Benchmark.mqh
 
 
 ## Usage
-1. Benchmark.mqhを読み込む
-2. 処理の前にBenchmarkクラスのStartメソッドを実行
-3. 処理の後にBenchmarkクラスのEndメソッドを実行
-4. 操作履歴に実行にかかった時間が出力される
+1. Include Benchmark.mqh.
+2. Execute the **Start** method before the processing you want to measure.
+3. Execute the **End** method after the processing you want to measure.
+4. Elapsed time is output to the Experts tab.
 
 ``` cpp
 #include <Benchmark.mqh>
 
 int OnInit()
 {
-   // 計測を開始
+   // Start measurement.
    Benchmark::Start("Sample");
    
    for(int i = 0; i < 1000000; i++) {
-      // 何らかの処理
+      // Some processing.
    }
    
-   // 計測終了
+   // End measurement.
    Benchmark::End();
    
    return(INIT_SUCCEEDED);
 }
 ```
 
-StartメソッドとEndメソッドを実行する代わりに、BechmarkRunを利用することも可能です。  
-BechmarkRunの第一引数に計測したい処理を、第二引数に繰り返したい回数を指定します。
-
+Instead of running the Start and End methods, you can also use BenchmarkRun.  
 ``` cpp
 int sum(int a, int b, int c)
 {
@@ -43,7 +41,7 @@ int sum(int a, int b, int c)
 
 int OnInit()
 {
-　   // 関数sumを1,000,000回だけ実行にかかった時間を出力する
+   // Output the time taken to execute the function sum one million times.
    BenchmarkRun(sum(100, 200, 300), 1000000); 
    
    return(INIT_SUCCEEDED);
