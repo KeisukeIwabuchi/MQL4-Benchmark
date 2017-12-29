@@ -4,7 +4,7 @@ Module for measuring execution speed.
 
 ## Install
 1. Download Benchmark.mqh
-2. Save the file to /MQL4/Includes/mql4_modules/Benchmark/Benchmark.mqh
+2. Save the file to /MQL4/Include/mql4_modules/Benchmark/Benchmark.mqh
 
 
 ## Usage
